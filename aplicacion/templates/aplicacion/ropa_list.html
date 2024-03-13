@@ -1,0 +1,52 @@
+{% extends "aplicacion/index.html" %}
+
+{% block contenido %}
+
+<table>
+    <tr>
+        <td width="200"><h2>Ropa</h2></td>
+        <td>
+            <a
+            href="{% url 'ropa_create' %}"
+            class="btn btn-primary btn-sm"
+            ><i class="fa fa-plus fa-lg" title="Crear"> </i>
+            </a>
+        </td>        
+    </tr>
+</table>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nombre</th>
+            <th>Género</th>
+            <th>Precio</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for r in ropa_list %}
+        <tr>
+            <td>{{ r.id }}</td>
+            <td>{{ r.nombre }}</td>
+            <td>{{ r.genero }}</td>
+            <td>{{ r.precio }}</td>
+            <td>
+                <a
+                  href="{% url 'ropa_update' r.id %}"
+                  class="btn btn-primary"
+                  style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"
+                  ><i class="fa fa-edit fa-sm" title="Edit Record"></i>
+                </a>
+                <a
+                  href="{% url 'ropa_delete' r.id %}"
+                  class="btn btn-danger"
+                  style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"
+                  ><i class="fa fa-trash fa-sm" title="Delete Record"></i>
+                </a>                
+            </td>  
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock contenido %}

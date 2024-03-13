@@ -1,0 +1,11 @@
+{% extends "aplicacion/index.html" %}
+
+{% block contenido %}
+
+<form action="{% url 'encontrar_ropa' %}" method="get">
+    {% csrf_token %}
+    <p>Ingrese vestimenta a buscar: <input type="text" name="buscar" id="buscar"></p>
+    <input type="submit" value="Buscar">
+</form>
+
+{% endblock contenido %}
