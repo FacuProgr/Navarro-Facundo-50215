@@ -1,0 +1,9 @@
+{% extends "aplicacion/index.html" %}
+{% block contenido %}
+<h2>Agregar {{ ropa.nombre }} al carrito</h2>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Agregar al carrito</button>
+</form>
+{% endblock %}

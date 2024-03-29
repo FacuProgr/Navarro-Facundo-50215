@@ -1,0 +1,13 @@
+{% extends 'aplicacion/index.html' %}
+
+{% block contenido %}
+<form action="" method="post" enctype="">
+    {% csrf_token %}
+
+    <table>
+        {{ form.as_table }}
+    </table>
+    
+    <input type="submit" value="Actualizar Avatar">
+</form>
+{% endblock contenido %}

@@ -2,7 +2,7 @@
 
 {% block contenido %}
 <h2>Ropa</h2>
-<form action="" method="POST">
+<form action="" method="POST" enctype='multipart/form-data'>
     {% csrf_token %}   
     <div class="text-center">     
         <h3>¿ Esta seguro de eliminar la vestimenta? <p style="color:red">{{ object }}</p> </h3>

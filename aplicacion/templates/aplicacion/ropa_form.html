@@ -3,9 +3,8 @@
 
 {% block contenido %}
     
-<form action="" method="post">
+<form action="" method="post" enctype='multipart/form-data'>
     {% csrf_token %}
-    <!-- Comentario  -->
     <table>
         {{ form.as_table }}
     </table>

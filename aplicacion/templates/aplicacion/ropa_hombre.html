@@ -1,0 +1,22 @@
+{% extends "aplicacion/index.html" %}
+
+{% block contenido %}
+<div class="container">
+    <h1 class="display-4 text-center mb-4">Ropa de Hombre</h1>
+    <div class="row">
+        {% for ropa in ropa_hombre %}
+        <div class="col-md-4">
+            <div class="card">
+                <a href="{% url 'descripcion_ropa' ropa.id %}">
+                    <img src="{{ ropa.img.url }}" class="card-img-top" alt="{{ ropa.nombre }}">
+                </a>
+                <div class="card-body">
+                    <h5 class="card-title">{{ ropa.nombre }}</h5>
+                    <p class="card-text">Precio: {{ ropa.precio }}</p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock contenido %}

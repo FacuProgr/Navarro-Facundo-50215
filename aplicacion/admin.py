@@ -4,3 +4,4 @@ from .models import *
 # Register your models here.
 admin.site.register(Ropa)
 admin.site.register(Perfil)
+admin.site.register(Avatar)

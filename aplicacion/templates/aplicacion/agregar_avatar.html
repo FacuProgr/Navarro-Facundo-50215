@@ -1,0 +1,26 @@
+{% extends "aplicacion/index.html" %}
+
+{% block contenido %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card border-0 shadow-lg rounded-3">
+                <div class="card-header bg-primary text-white text-center py-3">
+                    <h3 class="mb-0">Actualizar Avatar</h3>
+                </div>
+                <div class="card-body">
+                    <form action="" method="post" enctype="multipart/form-data" class="needs-validation" novalidate>
+                        {% csrf_token %}
+                        <div class="mb-3">
+                            <label for="id_imagen" class="form-label visually-hidden">Seleccionar nueva imagen:</label>
+                            <input type="file" class="form-control form-control-lg" id="id_imagen" name="imagen" accept="image/*" required>
+                            <div class="invalid-feedback">Por favor selecciona una imagen válida.</div>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-lg btn-block">Actualizar Avatar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock contenido %}

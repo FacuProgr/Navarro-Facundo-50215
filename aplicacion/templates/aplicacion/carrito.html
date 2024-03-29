@@ -1,10 +1,40 @@
 {% extends 'aplicacion/index.html' %}
 
-{% block titulo %}
-<h1 class="mb-5">Carrito</h1>
-{% endblock titulo %}
-
-
 {% block contenido %}
-
+<div class="container mt-5">
+    <h1 class="text-center mb-4">Carrito de Compras</h1>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        {% for item in items_carrito %}
+        <div class="col">
+            <div class="card h-100 shadow">
+                <!-- Cartel-->
+                <div class="badge bg-dark text-white position-absolute top-0 start-100 translate-middle"></div>
+                <!-- Imagen-->
+                <img class="card-img-top" src="{{ item.producto.img.url }}" alt="{{ item.producto.nombre }}">
+                <!-- Detalles-->
+                <div class="card-body">
+                    <h5 class="card-title">{{ item.producto.nombre }}</h5>
+                    <p class="card-text">Precio: {{ item.producto.precio }}</p>
+                </div>
+                <!-- Eliminar del carro-->
+                <div class="card-footer d-flex justify-content-center">
+                    <form method="post" action="{% url 'carro_delete' item.id %}">
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-danger">Eliminar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    <!-- Botón para comprar -->
+    <div class="row justify-content-center mt-4">
+        <div class="col-6 text-center">
+            <form method="post" action="{% url 'confirmar_compra' %}">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-success btn-lg">Comprar</button>
+            </form>
+        </div>
+    </div>
+</div>
 {% endblock contenido %}

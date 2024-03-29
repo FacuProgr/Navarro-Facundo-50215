@@ -3786,7 +3786,7 @@ textarea.form-control-lg {
   --bs-nav-link-hover-color: var(--bs-navbar-hover-color);
   --bs-nav-link-disabled-color: var(--bs-navbar-disabled-color);
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   padding-left: 0;
   margin-bottom: 0;
   list-style: none;
@@ -3794,6 +3794,7 @@ textarea.form-control-lg {
 .navbar-nav .show > .nav-link,
 .navbar-nav .nav-link.active {
   color: var(--bs-navbar-active-color);
+  font-size: 18px;
 }
 .navbar-nav .dropdown-menu {
   position: static;
@@ -4105,6 +4106,13 @@ textarea.form-control-lg {
   padding-right: var(--bs-navbar-nav-link-padding-x);
   padding-left: var(--bs-navbar-nav-link-padding-x);
 }
+.navbar-nav .nav-link {
+  font-size: 18px;
+}
+.navbar-nav .bigger {
+  font-size: 25px;
+}
+
 .navbar-expand .navbar-nav-scroll {
   overflow: visible;
 }
@@ -4136,7 +4144,9 @@ textarea.form-control-lg {
   padding: 0;
   overflow-y: visible;
 }
-
+.navbar-nav .btn-primary {
+  margin-left: auto;
+}
 .navbar-dark {
   --bs-navbar-color: rgba(255, 255, 255, 0.55);
   --bs-navbar-hover-color: rgba(255, 255, 255, 0.75);
@@ -10823,4 +10833,35 @@ textarea.form-control-lg {
   .d-print-none {
     display: none !important;
   }
+}
+.container {
+  margin-top: 50px;
+}
+
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+}
+
+.rounded {
+  border-radius: 12px;
+}
+
+.shadow {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  font-size: 36px;
+  color: #333;
+}
+
+hr {
+  border-color: #ccc;
+}
+
+p.lead {
+  font-size: 18px;
+  color: #666;
+  margin-bottom: 10px;
 }

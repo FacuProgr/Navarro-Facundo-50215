@@ -1,11 +1,24 @@
 {% extends "aplicacion/index.html" %}
 
 {% block contenido %}
-
-<form action="{% url 'encontrar_ropa' %}" method="get">
-    {% csrf_token %}
-    <p>Ingrese vestimenta a buscar: <input type="text" name="buscar" id="buscar"></p>
-    <input type="submit" value="Buscar">
-</form>
-
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card border-0 shadow-lg rounded-3">
+                <div class="card-header bg-primary text-white text-center py-3">
+                    <h3 class="mb-0">Buscar Vestimenta</h3>
+                </div>
+                <div class="card-body">
+                    <form action="{% url 'encontrar_ropa' %}" method="get" class="mb-3">
+                        {% csrf_token %}
+                        <div class="input-group">
+                            <input type="text" class="form-control form-control-lg" name="buscar" id="buscar" placeholder="Ingrese vestimenta a buscar" aria-label="Ingrese vestimenta a buscar" aria-describedby="button-buscar">
+                            <button class="btn btn-primary btn-lg" type="submit" id="button-buscar">Buscar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock contenido %}
